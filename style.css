@@ -1,83 +1,197 @@
-body{
-    font-size: 20px;
+/* Modern Todo App Styling */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    background-color: #f5f7fa;
+    color: #333;
+    margin: 0;
+    padding: 20px;
 }
 
-.heading{
-    width: 50%;
+.heading {
+    width: 80%;
+    max-width: 600px;
     margin: 30px auto;
     text-align: center;
-    color: #6B8E23;
-    background: #FFF8DC;
-    border: 2px solid #6B8E23;
-    border-radius: 20px;
+    color: #3a7bd5;
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-form{
-    width: 50%;
+.heading h2 {
+    margin: 0;
+    font-weight: 500;
+    font-size: 24px;
+}
+
+form {
+    width: 80%;
+    max-width: 600px;
     margin: 30px auto;
-    border-radius: 5px;
-    padding: 10px;
-    background: #FFF8DC;
-    border: 1px solid #6B8E23;
+    border-radius: 10px;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
 }
 
 form p {
-    color: red;
-    margin: 0px;
+    color: #e74c3c;
+    margin: 0 0 10px 0;
+    width: 100%;
+    font-size: 14px;
 }
 
-.task_input{
-    width: 73%;
-    height: 15px;
-    padding: 10px;
-    border: 2px solid #6B8E23;
-}
-
-.add_btn{
-    height: 29px;
-    background: #FFF8DC;
-    color: #6B8E23;
-    border: 2px solid #6B8E23;
+.task_input {
+    flex: 1;
+    height: 45px;
+    padding: 0 15px;
+    border: 1px solid #ddd;
     border-radius: 5px;
-    padding: 5px 20px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+    font-family: 'Poppins', sans-serif;
 }
 
-table{
-    width: 50%;
+.task_input:focus {
+    outline: none;
+    border-color: #3a7bd5;
+    box-shadow: 0 0 0 2px rgba(58, 123, 213, 0.2);
+}
+
+.add_btn, .update_btn {
+    height: 45px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 0 20px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    font-family: 'Poppins', sans-serif;
+}
+
+.add_btn {
+    background: #3a7bd5;
+}
+
+.add_btn:hover {
+    background: #2c5ea3;
+}
+
+.update_btn {
+    background: #27ae60;
+}
+
+.update_btn:hover {
+    background: #219653;
+}
+
+table {
+    width: 80%;
+    max-width: 600px;
     margin: 30px auto;
     border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-tr{
-    border-bottom: 1px solid #cbcbcb;
+
+thead {
+    background-color: #3a7bd5;
+    color: white;
 }
 
 th {
-    font_size: 19px;
-    color: #6C8E23;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: left;
+    padding: 12px 15px;
 }
-th, td{
-    border: none;
-    height: 30px;
-    padding: 2px;
+
+tr {
+    border-bottom: 1px solid #eee;
+}
+
+tr:last-child {
+    border-bottom: none;
+}
+
+td {
+    padding: 12px 15px;
+    height: auto;
 }
 
 tr:hover {
-    background: #E9E9E9;
+    background: #f9f9f9;
 }
 
-.task{
-    tast-align: left;
+.task {
+    text-align: left;
+    word-break: break-word;
 }
-.delete{
+
+.actions {
     text-align: center;
+    width: 120px;
+    display: flex;
+    justify-content: space-around;
 }
 
-.delete a{
+.edit, .delete {
+    display: inline-block;
     color: white;
-    background: #a52a2a;
-    padding: 1px 6px;
-    border-radius: 3px;
+    padding: 5px 10px;
+    border-radius: 5px;
     text-decoration: none;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
 
+.edit {
+    background: #3498db;
+}
+
+.edit:hover {
+    background: #2980b9;
+}
+
+.delete {
+    background: #e74c3c;
+}
+
+.delete:hover {
+    background: #c0392b;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .heading, form, table {
+        width: 95%;
+    }
+    
+    .task_input {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    
+    form {
+        flex-direction: column;
+    }
+    
+    .add_btn {
+        width: 100%;
+    }
+}
 
 
